@@ -1,30 +1,16 @@
 # AngularJS
 
-- Incluir em uma página html:
+## Incluir em uma página HTML
 
 ```<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>```
 
-- Algumas diretivas
-    - ng-app
-    - ng-controller
-    - ng-model
-    - ng-bind
-    - ng-init
+## Diretivas
 
-- Expressões
-    - {{5 + 5}}
-
-- Modulos
-
-
-## Expressão
-
-~~~html
-<div ng-app="">
-    <input type="text" ng-model="texto1">
-    <p>{{texto1}}</p>
-</div>
-~~~
+- ng-app
+- ng-controller
+- ng-model
+- ng-bind
+- ng-init
 
 ## Diretiva ng-bind
 
@@ -32,6 +18,16 @@
 <div ng-app="">
     <input type="text" ng-model="texto1"/>
     <p ng-bind="texto1"></p>
+</div>
+~~~
+
+## Expressões
+
+~~~html
+<div ng-app="">
+    <input type="text" ng-model="texto1">
+    <p>{{texto1}}</p>
+    <p>{{5 + 5}}</p>
 </div>
 ~~~
 
