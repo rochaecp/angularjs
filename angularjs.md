@@ -34,15 +34,18 @@
 ## Controllers
 
 ~~~html
-<div ng-app="minhaAplicacao" ng-controller="minhaController">
-    <input type="text" ng-model="texto1"> <br>
-    <span>{{'Bom dia ' + texto1}}</span>
+<div ng-app="myApp" ng-controller="myController">        
+    <p ng-bind="firstName + ' ' + lastName"></p>
+    <p>{{firstName + ' ' + lastName}}</p>        
+    <input type="text" ng-model="firstName" />
+    <input type="text" ng-model="lastName" />
 </div>
 
 <script>
-    var app = angular.module('minhaAplicacao', []);
-    app.controller('minhaController', function ($scope) {
-        $scope.texto1 = "Mauricio";
+    var app = angular.module("myApp", []);
+    app.controller("myController", function ($scope) {
+        $scope.firstName = 'Mauricio';
+        $scope.lastName = 'Rocha';
     });
 </script>
 ~~~
