@@ -31,30 +31,23 @@
 </div>
 ~~~
 
-## Controllers
+## Modulos
 
 ~~~html
-<div ng-app="myApp" ng-controller="myController">        
-    <p ng-bind="firstName + ' ' + lastName"></p>
-    <p>{{firstName + ' ' + lastName}}</p>        
-    <input type="text" ng-model="firstName" />
-    <input type="text" ng-model="lastName" />
+<div ng-app="myApp" ng-controller="myController">
+    {{firstName + " " + lastName}}
 </div>
 
 <script>
     var app = angular.module("myApp", []);
     app.controller("myController", function ($scope) {
-        $scope.firstName = 'Mauricio';
-        $scope.lastName = 'Rocha';
+        $scope.firstName = "Maurício";
+        $scope.lastName = "Rocha";
     });
 </script>
 ~~~
 
-
-
-
-
-## aaa
+## Controllers
 
 ~~~html
 
