@@ -33,6 +33,8 @@
 
 ## Modulos
 
+### Adicionando uma controller
+
 ~~~html
 <div ng-app="myApp" ng-controller="myController">
     {{firstName + " " + lastName}}
@@ -47,8 +49,20 @@
 </script>
 ~~~
 
-## Controllers
+### Adicionando uma directiva
 
 ~~~html
-
+<div ng-app="myApp" minha-directiva>
+    <!-- Outra forma:
+    <minha-directiva></minha-directiva>
+    -->
+</div>
+<script>
+    var app = angular.module("myApp", []);
+    app.directive("minhaDirectiva", function () {
+        return {
+            template: "Directiva criada com AngularJS"
+        };
+    });
+</script>
 ~~~
