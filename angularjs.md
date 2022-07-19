@@ -4,14 +4,6 @@
 
 ```<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>```
 
-## Diretivas
-
-- ng-app
-- ng-controller
-- ng-model
-- ng-bind
-- ng-init
-
 ## Diretiva ng-bind
 
 ~~~html
@@ -31,9 +23,32 @@
 </div>
 ~~~
 
-## Modulos
+## Repetindo elementos HTML
 
-### Adicionando uma controller
+- Lista de Strings
+
+~~~html
+<div ng-app="" ng-init="names=['Mauricio', 'Maria', 'Joana']">
+    <ul>
+        <li ng-repeat="x in names">{{x}}</li>
+    </ul>
+</div>
+~~~
+
+- Lista de Objetos
+
+~~~html
+<div ng-app="" ng-init="pessoas=[
+        {nome: 'Mauricio', idade: 30},
+        {nome: 'Maria', idade: 27},
+        {nome: 'Joana', idade: 22}]">
+    <ul>
+        <li ng-repeat="x in pessoas">{{x.nome + ' ' + x.idade}}</li>
+    </ul>
+</div>
+~~~
+
+## Adicionando uma Controller
 
 ~~~html
 <div ng-app="myApp" ng-controller="myController">
@@ -49,20 +64,56 @@
 </script>
 ~~~
 
-### Adicionando uma directiva
+## Adicionando uma Diretiva
+
+- Com Nome do Elemento e com Atributo
 
 ~~~html
-<div ng-app="myApp" minha-directiva>
-    <!-- Outra forma:
-    <minha-directiva></minha-directiva>
-    -->
+<div ng-app="myApp">
+    <minha-diretiva></minha-diretiva>       <!-- Nome do Elemento -->
+    <div minha-diretiva></div>              <!-- Atributo -->
 </div>
 <script>
     var app = angular.module("myApp", []);
-    app.directive("minhaDirectiva", function () {
+    app.directive("minhaDiretiva", function () {
         return {
-            template: "Directiva criada com AngularJS"
+            template: "<h3>Diretiva criada com AngularJS</h3>"
         };
     });
 </script>
+~~~
+
+- Com uma Classe
+
+~~~html
+<div ng-app="myApp">
+    <div class="minha-diretiva"></div>      
+</div>
+<script>
+    var app = angular.module("myApp", []);
+    app.directive("minhaDiretiva", function () {
+        return {
+            restrict: 'C', // permite invocar a diretiva a partir do nome da classe
+            template: "<h3>Diretiva criada com AngularJS</h3>"
+        };
+    });
+</script>
+~~~
+
+- Com um Comentário
+
+~~~html
+<body ng-app="myApp">
+    <!-- directive: minha-diretiva -->
+    <script>
+        var app = angular.module("myApp", []);
+        app.directive("minhaDiretiva", function () {
+            return {
+                restrict: 'M', // permite invocar a diretiva a partir do nome da classe
+                replace: true, // torna comentário visível
+                template: "<h3>Diretiva criada com AngularJS</h3>"
+            };
+        });
+    </script>
+</body>
 ~~~
