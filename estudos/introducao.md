@@ -117,3 +117,27 @@
     </script>
 </body>
 ~~~
+
+## Exemplos
+
+- Diretiva e Controller
+
+    ~~~csharp
+    <div ng-app="myApp" ng-controller="myController">
+        <minha-diretiva></minha-diretiva>
+    </div>
+
+    <script>
+        var app = angular.module("myApp", []);
+
+        app.controller("myController", function ($scope) {
+            $scope.firstName = "Maurício";
+        });
+
+        app.directive("minhaDiretiva", function () {
+            return {
+                template: "<p>Bem vindo <b>{{firstName}}</b></p>"
+            };
+        });
+    </script>
+    ~~~
