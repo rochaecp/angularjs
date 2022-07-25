@@ -73,6 +73,7 @@
     <minha-diretiva></minha-diretiva>       <!-- Nome do Elemento -->
     <div minha-diretiva></div>              <!-- Atributo -->
 </div>
+
 <script>
     var app = angular.module("myApp", []);
     app.directive("minhaDiretiva", function () {
@@ -89,6 +90,7 @@
 <div ng-app="myApp">
     <div class="minha-diretiva"></div>      
 </div>
+
 <script>
     var app = angular.module("myApp", []);
     app.directive("minhaDiretiva", function () {
@@ -122,7 +124,7 @@
 
 - Diretiva e Controller
 
-    ~~~csharp
+    ~~~html
     <div ng-app="myApp" ng-controller="myController">
         <minha-diretiva></minha-diretiva>
     </div>
