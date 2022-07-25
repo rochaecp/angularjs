@@ -17,3 +17,15 @@
   - C: Diretiva só pode ser invocada como classe
   - M: Diretiva só pode ser invocada como comentário
   - Default: EA
+
+## Classes CSS
+
+- ng-empty
+- ng-not-empty
+- ng-touched
+- ng-untouched
+- ng-valid
+- ng-invalid
+- ng-dirty
+- ng-pending
+- ng-pristine
