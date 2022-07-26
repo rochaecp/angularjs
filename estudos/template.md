@@ -1,4 +1,4 @@
-# Template
+# AngulasJS - Template
 
 ~~~html
 <!DOCTYPE html>
