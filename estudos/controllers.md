@@ -1,5 +1,7 @@
 # AngularJS - Controllers
 
+## Exemplos
+
 - Adicionando uma Controller
 
     ~~~html
@@ -15,6 +17,25 @@
         });
     </script>
     ~~~
+    
+- Adicionando Métodos
+
+	~~~html
+    <div ng-app="myApp" ng-controller="myController">
+        <h1 ng-click="changeName()">{{firstName}}</h1>
+    </div>
+
+    <script>
+        var app = angular.module("myApp", []);
+
+        app.controller("myController", function ($scope) {
+            $scope.firstName = "Maurício";
+            $scope.changeName = function () {
+                $scope.firstName = "Rocha";
+            };
+        });
+    </script>
+	~~~
 	
 - Adicionando uma Controller e uma Diretiva
 
