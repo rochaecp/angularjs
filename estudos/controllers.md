@@ -51,7 +51,7 @@
 
 	- Arquivo: controller.html
 
-		~~~html
+		~~~javascript
 		var app = angular.module("myApp", []);
 		app.controller("myController", function ($scope) {
 		    $scope.firstName = "Maurício";
@@ -60,7 +60,36 @@
 		        return $scope.firstName + " " + $scope.lastName;
 			};
 		});
+		~~~
+		
+- Controllers em arquivos externos - ex 2
+
+	- Arquivo: index.html
+
+		~~~html
+	    <div ng-app="myApp" ng-controller="myController">
+		<ul ng-repeat="pessoa in pessoas">
+		    <li>{{pessoa.nome + " - " + pessoa.idade}}</li>
+		</ul>
+	    </div>
+
+	    <script src="controller.js"></script>
 		~~~	
+
+	- Arquivo: controller.html
+
+		~~~javascript
+		var app = angular.module("myApp", []);
+
+		app.controller("myController", function ($scope) {
+
+			$scope.pessoas = [
+				{ nome: 'Mauricio', idade: 30 },
+				{ nome: 'Maria', idade: 40 },
+				{ nome: 'Antonia', idade: 70 }
+			];
+		});
+		~~~		
 	
 - Adicionando uma Controller e uma Diretiva
 
