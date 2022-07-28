@@ -30,3 +30,6 @@
     - ng-dirty
     - ng-pending
     - ng-pristine
+
+- Eventos
+    - ng-click
