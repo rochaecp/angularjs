@@ -51,7 +51,7 @@
     ~~~html
     <form ng-app="" name="myForm">
         E-mail:
-        <input type="email" name="myEmail" ng-model="email"/>
+        <input type="email" name="myEmail" ng-model="email" required />
         <span ng-show="myForm.myEmail.$error.email">E-mail inválido</span>
     </form>
     ~~~
