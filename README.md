@@ -1,4 +1,4 @@
-# AngulasJS
+# AngularJS
 
 - Úteis
     - [Template](estudos/template.md)
